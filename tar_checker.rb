@@ -20,8 +20,8 @@ class TarChecker
 
   def compare_files
     tmp_root = "/tmp/tar_checker"
-    %W(file1 file2).each do |file|
-      tmp_dir = tmp_root + file
+    %w(file1 file2).each do |file|
+      tmp_dir = "#{tmp_root}/#{file}"
       FileUtils.rm_rf tmp_dir if File.exists? tmp_dir
       FileUtils.mkdir_p tmp_dir
     end
